@@ -19,7 +19,7 @@
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export enum ChainType {
-  evm = "evm",
-  solana = "solana",
-  aptos = "aptos",
+  Evm = "evm",
+  Solana = "solana",
+  Aptos = "aptos",
 }

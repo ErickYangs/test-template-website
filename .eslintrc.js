@@ -23,6 +23,7 @@ module.exports = {
     },
     plugins: ["vue", "@typescript-eslint", "prettier", "vuejs-accessibility"],
     rules: {
+      "no-useless-catch": "off",
       "prettier/prettier": "error",
       "import/prefer-default-export": "off", // export default is bad
       "@typescript-eslint/unbound-method": "off", // for useI18n

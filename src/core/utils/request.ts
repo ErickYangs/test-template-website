@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosRequestConfig } from "axios";
 // import Toast from "@/components/BaseToast";
 import { ErrorCode, TaskOnResponse } from "@/core/apis/models";
-import { getErrorMessage } from "@/core/utils/tools";
-import RequestError from "@/core/Entities/error";
+// import { getErrorMessage } from "@/core/utils/tools";
+// import RequestError from "@/core/Entities/error";
 // import i18n from "@/i18n";
 // import { clearUserState, useTokenState } from "@/store/user";
 import router from "../../router";
@@ -20,19 +19,17 @@ const request = async <T>(
     const { data } = await axios.request({
       headers: {
         "content-type": "application/json",
-        Authorization: useTokenState().value,
-        // "session-id": getSessionId(),
         ...options.headers,
       },
       ...options,
     });
-    const { error, result } = data as TaskOnResponse;
-    if (error && error.code) {
-      if (error.code === ErrorCode.CAMPAIGN_NOT_EXIST) {
+    const { error1, result } = data as TaskOnResponse;
+    if (error1 && error1.code) {
+      if (error1.code === ErrorCode.CAMPAIGNNOTEXIST) {
         router.push("/404");
       }
-      const message = getErrorMessage(error.code, error.message);
-      throw new RequestError(message, error.code, result);
+      // const message = getErrorMessage(error.code, error.message);
+      // throw new RequestError(message, error.code, result);
     }
     return data;
   } catch (e) {

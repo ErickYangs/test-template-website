@@ -19,9 +19,9 @@
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export enum NotificationType {
-  create_campaign = "create_campaign",
-  pay_campaign = "pay_campaign",
-  join_campaign = "join_campaign",
-  lottery_winner = "lottery_winner",
-  completed_campaign = "completed_campaign",
+  CreateCampaign = "create_campaign",
+  PayCampaign = "pay_campaign",
+  JoinCampaign = "join_campaign",
+  LotteryWinner = "lottery_winner",
+  CompletedCampaign = "completed_campaign",
 }
